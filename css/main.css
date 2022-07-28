@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: #0E0E0E;
+}
+.parent {
+    width: calc(70% - 30px);
+    height: calc(100vh - 60px);
+    background-color: white;
+    margin: auto;
+    padding: 30px;
+    display: flex;
+}
+.parent .box {
+    width: calc(85% / 4 );
+    height: 100%;
+    position: relative;
+}
+.parent .box:first-child {
+    width: 15%;
+    height: 100%;
+}
+.parent .box {
+    display: flex;
+    flex-direction: column;
+}
+.parent .box::after {
+    content: "";
+    border-right: 1px solid rgba(33, 32, 32, 0.038);
+    width: 100%;
+    height: 100%;
+    background-color: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+}
+.parent .box .title {
+    height: 10%;
+    width: 100%;
+    background-color: #FC5103;
+    color: rgb(249, 246, 246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent .box .price {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+}
+.parent .box .price p {
+    color: #FC5103;
+    font-size: 50px;
+    font-weight: 600;
+    position: relative;
+}
+.parent .box .price span {
+    position: relative;
+    color: #777;
+    font-size: 12px;
+    font-weight: bold;
+    top: 15px;
+    right: -5px;
+}
+.parent .box .price p::before {
+    content: "$";
+    position: absolute;
+    color: #777;
+    font-size: 18px;
+    left: -15px;
+    top: 10px;
+    font-weight: bold;
+}
+.parent .box .price p::after {
+    content: "99";
+    position: absolute;
+    color: #777;
+    font-size: 18px;
+    font-weight: bold;
+    top: 10px;
+    right: -25px;
+}
+.parent .box .info {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+}
+.parent .box .info p {
+    width: 100%;
+    height: calc(100% / 7);
+    background-color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #777;
+}
+.parent .box .info p i {
+    font-size: 15px;
+    font-weight: bold;
+}
+.parent .box:first-child .info {
+    color: #777;
+}
+.parent .box .info p:first-child,
+.parent .box .info p:nth-child(3),
+.parent .box .info p:nth-child(5),
+.parent .box .info p:nth-child(7) {
+    background-color: #F7F7F7;
+}
+.parent .box .order {
+    width: 100%;
+    height: 10%;
+    background-color: #FAFAFA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.parent .box .order button {
+    border: none;
+    background-color: #333333;
+    color: #F7F7F7;
+    padding: 7px 20px;
+    border-radius: 8px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.parent .box:nth-child(4) .order button {
+    background-color: #FC5103;
+}
